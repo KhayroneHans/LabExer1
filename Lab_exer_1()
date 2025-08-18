@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class LabExer1 {
+
+    // Method that adds 5 to each value
+    public static void plusFive(double num1, double num2) {
+        System.out.println((num1 + 5) + " and " + (num2 + 5));
+    }
+
+    // Method that multiplies each value by 2
+    public static void timesTwo(double num1, double num2) {
+        System.out.println((num1 * 2) + " and " + (num2 * 2));
+    }
+
+    // Method that squares each value
+    public static void showSquared(double num1, double num2) {
+        System.out.println((num1 * num1) + " and " + (num2 * num2));
+    }
+
+    // Method that computes percentage
+    public static void computePercent(double num1, double num2) {
+        double percent = (num1 / num2) * 100;
+        System.out.println(num1 + " is " + (int) percent + " percent of " + num2);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input from user
+        System.out.println("Enter two numbers.");
+        System.out.print("First number: ");
+        double first = input.nextDouble();
+        System.out.print("Second number: ");
+        double second = input.nextDouble();
+
+        // Call the methods
+        plusFive(first, second);
+        timesTwo(first, second);
+        showSquared(first, second);
+        computePercent(first, second);
+
+        input.close();
+    }
+}
