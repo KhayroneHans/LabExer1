@@ -8,19 +8,18 @@ public class LabExercise2 {
         System.out.println("=== HashSet ===");
         HashSet<String> courses = new HashSet<>();
 
-        // Input 4 unique course codes
-        for (int i = 1; i <= 4; i++) {
-            System.out.print("Enter course " + i + ": ");
-            String course = sc.nextLine();
-            courses.add(course);
-        }
+        // Example course codes
+        courses.add("CS101");
+        courses.add("IT202");
+        courses.add("MATH201");
+        courses.add("ENG105");
 
         // Display all courses
         System.out.println("Courses: " + courses);
 
         // Search for a course
-        System.out.print("\nSearch course: ");
-        String courseSearch = sc.nextLine();
+        String courseSearch = "IT202";
+        System.out.println("\nSearch course: " + courseSearch);
         if (courses.contains(courseSearch)) {
             System.out.println(courseSearch + " is available.");
         } else {
@@ -28,8 +27,8 @@ public class LabExercise2 {
         }
 
         // Remove a course
-        System.out.print("Remove course: ");
-        String courseRemove = sc.nextLine();
+        String courseRemove = "ENG105";
+        System.out.println("Remove course: " + courseRemove);
         courses.remove(courseRemove);
         System.out.println("Courses after removal: " + courses);
 
@@ -37,44 +36,30 @@ public class LabExercise2 {
         System.out.println("\n=== HashMap ===");
         HashMap<String, Integer> grades = new HashMap<>();
 
-        // Input 3 student name-grade pairs
-        for (int i = 1; i <= 3; i++) {
-            System.out.print("Enter student " + i + " name: ");
-            String name = sc.nextLine();
-            System.out.print("Enter " + name + "'s grade: ");
-            int grade = sc.nextInt();
-            sc.nextLine(); // clear newline
-            grades.put(name, grade);
-        }
+        // Example student data
+        grades.put("Alice", 85);
+        grades.put("Bob", 90);
+        grades.put("Charlie", 78);
 
         // Display all grades
         System.out.println("Grades: " + grades);
 
-        // Retrieve grade of one student
-        System.out.print("\nSearch student: ");
-        String searchName = sc.nextLine();
-        if (grades.containsKey(searchName)) {
-            System.out.println(searchName + "'s grade: " + grades.get(searchName));
-        } else {
-            System.out.println(searchName + " not found.");
-        }
+        // Retrieve grade for one student
+        String searchName = "Bob";
+        System.out.println("\nSearch student: " + searchName);
+        System.out.println(searchName + "'s grade: " + grades.get(searchName));
 
         // Update grade for one student
-        System.out.print("Update student: ");
-        String updateName = sc.nextLine();
-        if (grades.containsKey(updateName)) {
-            System.out.print("New grade: ");
-            int newGrade = sc.nextInt();
-            sc.nextLine(); // clear newline
-            grades.put(updateName, newGrade);
-            System.out.println("Grades after update: " + grades);
-        } else {
-            System.out.println(updateName + " not found.");
-        }
+        String updateName = "Alice";
+        int newGrade = 88;
+        System.out.println("Update student: " + updateName);
+        System.out.println("New grade: " + newGrade);
+        grades.put(updateName, newGrade);
+        System.out.println("Grades after update: " + grades);
 
         // Remove one student
-        System.out.print("Remove student: ");
-        String removeName = sc.nextLine();
+        String removeName = "Charlie";
+        System.out.println("Remove student: " + removeName);
         grades.remove(removeName);
         System.out.println("Grades after removal: " + grades);
 
